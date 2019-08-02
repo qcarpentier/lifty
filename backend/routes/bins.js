@@ -49,7 +49,7 @@ router.route("/update/:id").post((req, res) => {
 
         bin.username = req.body.username;
         bin.binType = req.body.description;
-        bin.location = location
+        bin.location = location;
         bin.fillPercentage = req.body.fillPercentage;
         bin
             .save()
