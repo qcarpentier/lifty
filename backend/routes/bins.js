@@ -10,8 +10,8 @@ router.route("/").get((req, res) => {
 router.route("/add").post((req, res) => {
   const name = req.body.name;
   const binType = req.body.binType;
-  const longitude = req.body.longitude ? Number(req.body.longitude) : 0;
-  const latitude = req.body.latitude ? Number(req.body.latitude) : 0;
+  const longitude = req.body.location.coordinates ? Number(req.body.location.coordinates[0]) : 0;
+  const latitude = req.body.location.coordinates ? Number(req.body.location.coordinates[1]) : 0;
   const fillPercentage = req.body.fillPercentage;
 
   const location = {
