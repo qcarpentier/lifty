@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Navbar from "./components/navbar.component";
 import BinsList from "./components/bins-list.component";
+import EditBin from "./components/edit-bin.component";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={BinsList} />
+        <Route path="/edit/:id" component={EditBin} />
       </div>
     </Router>
   );
