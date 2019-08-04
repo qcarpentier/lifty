@@ -34,9 +34,11 @@ router.route("/:id").get((req, res) => {
 });
 
 router.route("/:id").delete((req, res) => {
+    console.log(req.params.id);
+    
     Bin.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Bin deleted."))
-    .catch(error => res.status(400).json(`Error: ${error}`));
+        .then(() => res.json("Bin deleted."))
+        .catch(error => res.status(400).json(`Error: ${error}`));
 });
 
 router.route("/update/:id").post((req, res) => {

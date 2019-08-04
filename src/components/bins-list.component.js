@@ -12,9 +12,9 @@ const Bin = props => (
     <td>
       <Link to={"/edit/" + props.bin._id}>Modifier</Link> | {" "}
       <a
-        href="#"
+        href="/"
         onClick={() => {
-          props.deleteExercise(props.bin._id);
+          props.deleteBin(props.bin._id);
         }}
       >
         Supprimer
@@ -45,8 +45,8 @@ export default class BinsList extends Component {
 
   deleteBin(id) {
     // Send a delete request
-    Axios.delete("http://localhost:5000/bins" + id).then(res =>
-      console.log(res.data)
+    Axios.delete("http://localhost:5000/bins/" + id).then(response =>
+      console.log(response.data)
     );
 
     // Remove the bin of the list
