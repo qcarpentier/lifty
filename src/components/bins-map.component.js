@@ -20,14 +20,14 @@ export default class BinsMap extends Component {
 
   render() {
     return (
-      <Map center={this.props.mapCenter} zoom={this.props.mapZoom}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <Polygon positions={this.props.polygonPositions} />
-        {this.markerBinList()}
-      </Map>
+        <Map center={this.props.mapCenter} zoom={this.props.mapZoom} minZoom={this.props.mapZoom}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          />
+          <Polygon positions={this.props.polygonPositions} />
+          {this.markerBinList()}
+        </Map>
     );
   }
 }

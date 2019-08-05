@@ -95,11 +95,10 @@ export default class EditExercise extends Component {
           </div>
 
           <div className="form-group">
-            <input
-              type="submit"
-              value="Valider"
-              className="btn btn-primary"
-            />
+            <input type="submit" value="Valider" className="btn btn-primary" />{" "}
+            <a href="/" role="button" className="btn btn-light">
+              Annuler
+            </a>
           </div>
         </form>
       </div>

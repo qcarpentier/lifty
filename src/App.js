@@ -9,9 +9,9 @@ import BinsList from "./components/bins-list.component";
 import EditBin from "./components/edit-bin.component";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faListUl, faBan, faPen, faRecycle, faDumpster, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faTimesCircle, faListUl, faBan, faPen, faRecycle, faDumpster, faLink } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faListUl, faBan, faPen, faRecycle, faDumpster, faLink);
+library.add(faBell, faTimesCircle, faListUl, faBan, faPen, faRecycle, faDumpster, faLink);
 
 function App() {
   return (

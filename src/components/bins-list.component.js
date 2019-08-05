@@ -38,7 +38,9 @@ export default class BinsList extends Component {
 
   // Display each bin of the list
   binList() {
-    let sortedBins = this.state.bins.sort((a, b) => (a.fillPercentage > b.fillPercentage) ? -1 : 1)
+    let sortedBins = this.state.bins.sort((a, b) =>
+      a.fillPercentage > b.fillPercentage ? -1 : 1
+    );
 
     return sortedBins.map(currentBin => {
       return (
@@ -49,7 +51,9 @@ export default class BinsList extends Component {
 
   render() {
     // Walibi positions (for test purpose only)
-    const position = [50.699515, 4.591793];
+    // Bug: the map is not centered as the latitude is -0.005 because of the fixed position of the map
+    // const position = [50.699515, 4.591793];
+    const position = [50.699515, (4.591793 + 0.01)];
     const mapZoom = 15;
     const polygonPositions = [
       [50.695634, 4.587268],
@@ -65,29 +69,31 @@ export default class BinsList extends Component {
     ];
 
     return (
-      <div className="container">
-        <div>
-          <h3>Liste des poubelles</h3>
-          <table className="table table-sm table-bordered table-hover">
-            <thead className="thead-light">
-              <tr>
-                <th />
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Remplissage</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>{this.binList()}</tbody>
-          </table>
-        </div>
-        <div>
-          <BinsMap
-            bins={this.state.bins}
-            mapCenter={position}
-            mapZoom={mapZoom}
-            polygonPositions={polygonPositions}
-          />
+      <div className="container-fluid ">
+        <div className="row justify-content-md-center">
+          <div className="col">
+            <h3>Liste des poubelles</h3>
+            <table className="table table-sm table-bordered table-hover">
+              <thead className="thead-light">
+                <tr>
+                  <th />
+                  <th>Nom</th>
+                  <th>Type</th>
+                  <th>Remplissage</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>{this.binList()}</tbody>
+            </table>
+          </div>
+          <div className="col-7">
+            <BinsMap
+              bins={this.state.bins}
+              mapCenter={position}
+              mapZoom={mapZoom}
+              polygonPositions={polygonPositions}
+            />
+          </div>
         </div>
       </div>
     );
