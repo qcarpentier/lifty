@@ -80,9 +80,9 @@ export default class BinsList extends Component {
         </div>
         <div>
           <BinsMap
+            bins={this.state.bins}
             mapCenter={position}
             mapZoom={mapZoom}
-            markerPosition={position}
             polygonPositions={polygonPositions}
           />
         </div>
