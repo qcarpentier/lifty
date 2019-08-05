@@ -11,7 +11,7 @@ export default class BinsMap extends Component {
       ];
 
       return (
-        <Marker position={position}>
+        <Marker position={position} key={currentBin._id}>
           <Popup>{currentBin.name}</Popup>
         </Marker>
       );

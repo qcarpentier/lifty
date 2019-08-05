@@ -7,9 +7,12 @@
   font-size: 25px;
 }
 
-sup {
-  color:#EE6E51;
-  font-size: 50%;
+sub {
+  color:white;
+  background-color: #EE6E51;
+  padding: 2px;
+  font-size: 0.6em !important;
+  font-weight: 600;
 }
 
 /***************/

@@ -38,7 +38,9 @@ export default class BinsList extends Component {
 
   // Display each bin of the list
   binList() {
-    return this.state.bins.map(currentBin => {
+    let sortedBins = this.state.bins.sort((a, b) => (a.fillPercentage > b.fillPercentage) ? -1 : 1)
+
+    return sortedBins.map(currentBin => {
       return (
         <Bin bin={currentBin} deleteBin={this.deleteBin} key={currentBin._id} />
       );
@@ -57,18 +59,19 @@ export default class BinsList extends Component {
       [50.703856, 4.595329],
       [50.702711, 4.597201],
       [50.700715, 4.594889],
-      [50.699220, 4.595264],
-      [50.695900, 4.587977],
-      [50.695634, 4.587268],
-    ]
+      [50.69922, 4.595264],
+      [50.6959, 4.587977],
+      [50.695634, 4.587268]
+    ];
 
     return (
       <div className="container">
         <div>
           <h3>Liste des poubelles</h3>
-          <table className="table">
+          <table className="table table-sm table-bordered table-hover">
             <thead className="thead-light">
               <tr>
+                <th />
                 <th>Nom</th>
                 <th>Type</th>
                 <th>Remplissage</th>

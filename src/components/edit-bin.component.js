@@ -70,7 +70,7 @@ export default class EditExercise extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h3>Modifier une poubelle</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
