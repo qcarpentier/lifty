@@ -1,5 +1,4 @@
 import React from 'react'
-import L from 'leaflet';
 import { Map, Marker, Popup, Polygon, TileLayer } from 'react-leaflet';
 
 const BinsMap = (props) => {
